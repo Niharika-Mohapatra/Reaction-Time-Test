@@ -1,0 +1,25 @@
+<html>
+
+<body>
+  <form id="userName" method="POST">
+    {{ form.hidden_tag() }}
+    
+    <label for="usernameInput">Please enter your name:</label>
+    {{ form.username(id="usernameInput", required=True) }}
+
+    {{ form.btn_submit(id="submitButton") }}
+  </form>
+</body>
+
+<script>
+  document.getElementById("userName").addEventListener("submit", function () {
+      let userInput = document.getElementById("usernameInput").value;
+      localStorage.setItem("username", userInput);
+  });
+</script>
+
+</html>
+  
+
+    
+

@@ -1,0 +1,29 @@
+
+<html>
+<head>
+  <title>Reaction Time Test</title>
+  <style>
+    h1 {
+        font-size: 20px;
+    }
+    button {
+          color: white;
+          padding: 15px 32px; 
+          font-family: Arial, sans-serif;
+          font-size: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+    <h1>Reaction Time Test</h1>
+    <p id="text"></p>
+    <button id="button"></button>
+
+    <form id="reactionForm" method="POST" action="{{ url_for("save_reaction_time") }}">
+      <input type="hidden" name="reactionTime" id="reactionTimeInput">
+    </form>
+
+    <script src="{{ url_for("static", filename="script.js") }}" defer></script>
+</body>
+</html>
