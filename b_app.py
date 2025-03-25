@@ -11,7 +11,7 @@ class userName(FlaskForm):
     print(username)
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-secret-key")
 
 @app.route('/', methods=["GET", "POST"])
 def index():
